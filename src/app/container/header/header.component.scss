@@ -1,0 +1,51 @@
+@import '../../../assets/colors';
+
+* {
+    font-size: 1.8rem;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem 2rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.img-container>.img {
+    // mix-blend-mode: color-burn;
+}
+
+.item-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style-type: none;
+}
+
+.item {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.item-link {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.item-link.active {
+    color: $secondary-color;
+    font-weight: bolder;
+}
+
+.item-link:hover {
+    color: $secondary-color;
+}
