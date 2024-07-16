@@ -16,5 +16,10 @@ export const user = {
             path: 'assets/icons/x-logo.svg',
             link: ''
         }
-    ]
+    ],
+    address: `2,3 Mayur park, <br> Besides Bhagawati School, <br> Hirawadi.`,
+    mobile: "+91 9876543210",
+    mobile2: "+91 9876543210",
+    email: "maakhodal@gmail.com",
+
 }
