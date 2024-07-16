@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from 'src/app/shared/user';
 
 @Component({
   selector: 'app-footer',
@@ -6,18 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
   currentYear = new Date().getFullYear();
+  user = user;
+
   constructor() { }
 
-  socialMediaLinks: any = {
-    instagram: 'https://www.instagram.com/mkc__111/'
-  }
   ngOnInit(): void {
   }
 
-  onSocialMediaClick(type: string) {
-    window.open(this.socialMediaLinks[type])
+  onSocialMediaClick(type: any) {
+    window.open(type.link)
   }
 
 }

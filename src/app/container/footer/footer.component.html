@@ -10,25 +10,12 @@
 
     <div class="social-media">
       <img
+        *ngFor="let social of user.socialMedias"
         class="img"
-        src="assets/icons/facebook.svg"
+        [src]="social.path"
         width="100%"
         height="100%"
-        (click)="onSocialMediaClick('facebook')"
-      />
-      <img
-        class="img"
-        src="assets/icons/instagram.svg"
-        width="100%"
-        height="100%"
-        (click)="onSocialMediaClick('instagram')"
-      />
-      <img
-        class="img"
-        src="assets/icons/x-logo.svg"
-        width="100%"
-        height="100%"
-        (click)="onSocialMediaClick('twitter')"
+        (click)="onSocialMediaClick(social)"
       />
     </div>
   </div>
@@ -44,6 +31,8 @@
   </ul>
 
   <div class="rights">
-    <p>&#169; {{ currentYear }} Maa Khodal Catering. All Rights Reserved !</p>
+    <p>
+      &#169; {{ currentYear }} {{ user.name }} Catering. All Rights Reserved !
+    </p>
   </div>
 </div>
