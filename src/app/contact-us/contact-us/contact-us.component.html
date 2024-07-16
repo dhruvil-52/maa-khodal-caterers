@@ -4,6 +4,39 @@
     <h1>Contact Us</h1>
   </header>
   <section class="content">
-    <p>This is the centered white section.</p>
+    <div class="section contact-details">
+      <div class="card-container">
+        <div class="card">
+          <div class="icon">
+            <img src="assets/icons/map-pin.svg" alt="Address Icon" />
+          </div>
+          <div class="body">
+            <h3>Address</h3>
+            <p [innerHTML]="user.address"></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <img src="assets/icons/phone.svg" alt="Address Icon" />
+          </div>
+          <div class="body">
+            <h3>Phone</h3>
+            <p>{{ user.mobile }}</p>
+            <p>{{ user.mobile2 }}</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <img src="assets/icons/mail.svg" alt="Address Icon" />
+          </div>
+          <div class="body">
+            <h3>Email</h3>
+            <p>{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section map"></div>
+    <div class="section form"></div>
   </section>
 </div>
