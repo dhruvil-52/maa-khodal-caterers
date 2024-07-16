@@ -10,7 +10,14 @@ export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
   constructor() { }
 
+  socialMediaLinks: any = {
+    instagram: 'https://www.instagram.com/mkc__111/'
+  }
   ngOnInit(): void {
+  }
+
+  onSocialMediaClick(type: string) {
+    window.open(this.socialMediaLinks[type])
   }
 
 }

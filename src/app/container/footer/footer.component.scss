@@ -11,8 +11,22 @@
     height: 40rem;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    color: $text-muted;
     position: relative;
+    background-image: url('../../../assets/images/pexels-jack-baghel-2199968-20446390.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $primary-color;
+    opacity: 0.2;
+    z-index: -1;
 }
 
 .quick-links {
@@ -32,6 +46,7 @@
     color: $primary-color;
     text-decoration: none;
     cursor: pointer;
+    color: $text-muted;
 }
 
 .item-link:hover {
@@ -42,15 +57,13 @@
     position: absolute;
     // bottom: 2rem;
     padding-top: 1rem;
-    border-top: 0.1rem solid $secondary-color;
+    border-top: 0.1rem solid $text-muted;
     width: 20rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
     gap: 1rem;
-    background-color: white;
-    z-index: 1;
 }
 
 .social-media>img {
@@ -60,6 +73,7 @@
     border-radius: 20%;
     padding: 0.5rem;
     cursor: pointer;
+    filter: invert(78%) sepia(54%) saturate(5%) hue-rotate(47deg) brightness(90%) contrast(88%);
 }
 
 .social-media>img:hover {
@@ -70,13 +84,11 @@
     position: absolute;
     bottom: 2rem;
     padding-top: 1rem;
-    border-top: 0.2rem solid $secondary-color;
+    border-top: 0.2rem solid $text-muted;
     width: calc(100% - 4rem);
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    background-color: white;
-    z-index: 1;
     font-size: 1.5rem;
 }

@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    color: white;
+    background: $secondary-color;
+}
+
 html {
     font-size: 10px;
     color: $primary-color;
