@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    background-image: url('../../../assets/images/background.jpg');
+    height: 100vh;
+    height: 100dvh;
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header {
+    position: relative;
+    color: white;
+    z-index: 1;
+    font-size: 1.5rem;
+    padding: 5rem;
+}
+
+.content {
+    position: relative;
+    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+    height: auto;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
