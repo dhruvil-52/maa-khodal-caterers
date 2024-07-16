@@ -1,0 +1,82 @@
+@import '../../../assets/colors';
+
+.img-container {
+    height: 10rem;
+    width: 20rem;
+    text-align: center;
+}
+
+.footer {
+    padding: 2rem;
+    height: 40rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: relative;
+}
+
+.quick-links {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style-type: none;
+    font-size: 1.5rem;
+}
+
+.quick-links>h2 {
+    color: $secondary-color;
+}
+
+.item-link {
+    color: $primary-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item-link:hover {
+    color: $secondary-color;
+}
+
+.social-media {
+    position: absolute;
+    // bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 0.1rem solid $secondary-color;
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    background-color: white;
+    z-index: 1;
+}
+
+.social-media>img {
+    height: 3rem;
+    width: 3rem;
+    border: 0.15rem solid $secondary-color;
+    border-radius: 20%;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.social-media>img:hover {
+    filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
+}
+
+.rights {
+    position: absolute;
+    bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 0.2rem solid $secondary-color;
+    width: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    z-index: 1;
+    font-size: 1.5rem;
+}

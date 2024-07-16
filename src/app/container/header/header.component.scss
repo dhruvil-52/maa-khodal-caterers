@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
+    z-index: 2;
 }
 
 .img-container>.img {
@@ -22,7 +23,7 @@
     flex-direction: row;
     gap: 3rem;
     list-style-type: none;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .item {
@@ -64,13 +65,13 @@
         position: absolute;
         right: 0;
         top: 0;
-        height: 60vh;
-        width: 30vw;
+        height: min(60vh, 30rem);
+        width: min(30vw, 25rem);
         background-color: $secondary-color;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-left: 5%;
+        padding-left: min(5rem, 5%);
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
