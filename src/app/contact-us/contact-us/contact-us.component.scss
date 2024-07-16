@@ -2,8 +2,8 @@
 
 .container {
     position: relative;
-    height: 100vh;
-    height: 100dvh;
+    height: 200%;
+    height: 200%;
     background-image: url('../../../assets/images/background.jpg');
     background-size: cover;
     background-position: center;
@@ -56,21 +56,9 @@ header {
     gap: 1rem;
 }
 
-.card-body {
-    flex: 1 1 calc(33.33% - 1rem);
-    padding: 1rem;
-    background-color: white;
-    border: 0.2rem solid $secondary-color;
-}
-
 .map,
 .form {
     flex: 1;
-    background-color: #4CAF50;
-}
-
-.form {
-    background-color: blue;
 }
 
 @media (max-width: 850px) {
@@ -94,10 +82,11 @@ header {
 
 .card {
     flex: 1 1 calc(33.33% - 1rem);
-    padding: 1rem 2rem;
+    padding: min(1rem, 10vh);
     border: 0.1rem solid $secondary-color;
     border-radius: 1rem;
     text-align: left;
+    align-items: center;
 }
 
 .body>p {
@@ -107,9 +96,4 @@ header {
 
 .body>h3 {
     color: $secondary-color;
-}
-
-.icon img {
-    width: 4rem;
-    height: 4rem;
 }

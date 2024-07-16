@@ -17,6 +17,10 @@ html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 @media (max-width: 480px) {
     html {
         font-size: 6px;
