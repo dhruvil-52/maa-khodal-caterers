@@ -4,34 +4,80 @@
     <h1>Contact Us</h1>
   </header>
   <section class="content">
-    <div class="section contact-details">
-      <div class="card-container">
-        <div class="card pointer" (click)="openLocationInGoogleMap()">
-          <div class="body">
-            <h3>Address</h3>
-            <p>{{ user.plainAddress }}</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="body">
-            <h3>Phone</h3>
-            <p>{{ user.mobile }}</p>
-            <p>{{ user.mobile2 }}</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="body">
-            <h3>Email</h3>
-            <p>{{ user.email }}</p>
-          </div>
-        </div>
+    <div class="contact-details">
+      <div class="contact address" (click)="openLocationInGoogleMap()">
+        <h4>Address</h4>
+        <p>{{ user.plainAddress }}</p>
+      </div>
+      <div class="contact">
+        <h4>Phone</h4>
+        <p>{{ user.mobile }}</p>
+        <p>{{ user.mobile2 }}</p>
+      </div>
+      <div class="contact mail">
+        <h4>Mail</h4>
+        <p>{{ user.email }}</p>
       </div>
     </div>
-    <div class="section map">
-      <div #map style="width:100%;height:90vh"></div>
-    </div>
-    <div class="section form">
-      <button type="button" (click)="sendDataToWhatsapp()">Send</button>
+    <div class="contact-form">
+      <div class="map">
+        <div #map style="width: 100%; height: 100%"></div>
+      </div>
+      <div class="form">
+        <div class="form-group">
+          <input
+            type="text"
+            id="name"
+            class="form-field"
+            placeholder="Name"
+            [(ngModel)]="formData.name"
+          />
+          <label for="name" class="form-label">Name *</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="tel"
+            class="form-field"
+            placeholder="Phone No."
+            [(ngModel)]="formData.phone"
+          />
+          <label for="tel" class="form-label">Phone No. *</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            class="form-field"
+            placeholder="Email"
+            [(ngModel)]="formData.email"
+          />
+          <label for="email" class="form-label">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea
+            id="message"
+            class="form-field"
+            placeholder="Your Message"
+            rows="6"
+            [(ngModel)]="formData.message"
+          ></textarea>
+          <label for="message" class="form-label">Your Message</label>
+        </div>
+        <div class="footer">
+          <button
+            type="submit"
+            class="btn btn-primary mr-2"
+            [disabled]="!formData.name || !formData.phone"
+            (click)="sendToWhatsapp()"
+          >
+            Send
+          </button>
+          <button type="reset" class="btn btn-secondary" (click)="clearForm()">
+            Clear
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </div>

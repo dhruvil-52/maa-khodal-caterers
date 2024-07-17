@@ -11,6 +11,7 @@ export class ContactUsComponent implements OnInit {
   user = user;
   map: any;
   @ViewChild('map', { static: false }) mapElement: any;
+  formData: any = {};
   constructor() { }
 
   ngAfterViewInit(): void {
@@ -36,16 +37,30 @@ export class ContactUsComponent implements OnInit {
   }
 
   sendDataToWhatsapp() {
-    var name = "name";
-    var phone = "phone";
-    var email = "email";
-    var service = "service";
-    var url: any = "https://wa.me/918789529215?text=";
-    + "Name: " + name + "%0a"
-      + "Phone: " + phone + "%0a"
-      + "Email: " + email + "%0a"
-      + "Service: " + service;
+    var url: any = "https://api.whatsapp.com/send?text=";
+    + "Name: " + this.formData.name + "%0a"
+      + "Phone: " + this.formData.phone + "%0a"
+      + "Email: " + this.formData.email + "%0a"
+      + "Message: " + this.formData.message;
     window.open(url, '_blank');
+  }
+  sendToFacebook() {
+    // window.open("https://www.facebook.com/sharer/sharer.php?u=" + this.Url + '&description=' + data which you want to share, '_blank')
+  }
+  sendToWhatsapp() {
+    let newMessage;
+    newMessage = 'Hii You got an Enquiry from ' + this.formData.name  + '%0A %0A' +
+      (this.formData.phone ? '📱 Phone Number ' + this.formData.phone + '%0A %0A' : '') +
+      (this.formData.email ? '📧 Email ' + this.formData.email + '%0A %0A' : '') +
+      (this.formData.message ? '💬 Message ' + this.formData.message + '%0A %0A' : '');
+    window.open(`https://api.whatsapp.com/send?phone=91${user.mobile}&text=${newMessage}`, '_blank')
+  }
+  sendToTwitter() {
+    // window.open("https://twitter.com/intent/tweet?text=" + data which you want to share,, '_blank')
+  }
+
+  clearForm() {
+    this.formData = {};
   }
 
   openLocationInGoogleMap() {
