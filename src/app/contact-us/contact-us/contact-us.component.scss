@@ -2,8 +2,6 @@
 
 .container {
     position: relative;
-    height: 200%;
-    height: 200%;
     background-image: url('../../../assets/images/background.jpg');
     background-size: cover;
     background-position: center;
@@ -32,9 +30,10 @@ header {
     margin: 0 auto;
     background-color: white;
     width: 90%;
+    height: 100%;
     padding: 2rem;
     border-radius: 1rem;
-    padding: 1rem 2rem;
+    padding: 2rem;
     font-size: 1.5rem;
 }
 
