@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="container">
+  <div class="intro-section">
+    <div class="overlay"></div>
+    <div class="intro">
+      <p class="greet">Welcome To</p>
+      <h1>{{ user.name }} Caterers</h1>
+      <p>
+        We are Ahmedabad's top wedding caterers, and your guests will be
+        satisfied after eating meals of both the finest quality and taste.
+      </p>
+      <button
+        type="button"
+        class="btn btn-primary contact-us"
+        routerLink="/contact-us"
+      >
+        Contact Us
+        <img
+          class="menu"
+          src="assets/icons/send.svg"
+          height="10%"
+          width="10%"
+        />
+      </button>
+    </div>
+  </div>
+  <div class="about-us">
+    <div class="image-section">
+      <div class="image3">
+        <div class="experience">
+          <h2>{{ counter }} +</h2>
+          <p>Years Of <br>
+            Experience</p>
+        </div>
+      </div>
+      <img
+        class="image1"
+        src="assets/images/background.jpg"
+      />
+      <img
+        class="image2"
+        src="assets/images/bg-2.jpg"
+      />
+    </div>
+    <div class="details-section">
+      <h4 class="header">About Us</h4>
+      <h1>Professional Caterers in Ahmedabad.</h1>
+      <p>
+        Ahmedabad has a love of food, thus we would be more than pleased to
+        serve any event and any size of group wherever there are people to
+        please. We prepare for servicing larger crowds of people, yet it is a
+        challenge that our crew is skilled at overcoming.
+      </p>
+      <p>
+        Our remarkable and professional indoor and outdoor catering services
+        have won over many clients.
+      </p>
+      <p>
+        The service crew is extremely well-dressed and polite when serving and
+        interacting with the guests.
+      </p>
+
+      <ul>
+        <li>Over {{ totalExperience }} years of experience</li>
+        <li>500+ successfully executed projects</li>
+        <li>Exceptional work quality</li>
+      </ul>
+    </div>
+  </div>
+</div>
