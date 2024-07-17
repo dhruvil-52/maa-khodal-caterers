@@ -21,18 +21,6 @@ html {
     cursor: pointer;
 }
 
-@media (max-width: 480px) {
-    html {
-        font-size: 6px;
-    }
-}
-
-@media (min-width:481px) and (max-width: 850px) {
-    html {
-        font-size: 8px;
-    }
-}
-
 // input field design chnages
 .form-group {
     position: relative;
@@ -112,5 +100,25 @@ label,
 }
 
 .mr-2 {
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 6px;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (min-width:481px) and (max-width: 850px) {
+    html {
+        font-size: 8px;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+    }
 }
