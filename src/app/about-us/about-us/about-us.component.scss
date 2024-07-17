@@ -34,8 +34,7 @@ header {
     font-size: 1.5rem;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    column-gap: 10rem;
-    grid-auto-rows: 50rem;
+    column-gap: min(10rem, 2vw);
 }
 
 .details>h1 {
@@ -50,12 +49,13 @@ p {
 
 .details>.contact-us {
     margin-top: 2rem;
-    width: 25rem;
+    width: min(25rem, 70vw);
 }
 
 .details>.vision-mission {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: min(10rem, 10vh, 10vw);
 }
 
 .details>.vision-mission>.vm {
@@ -68,4 +68,29 @@ p {
 
 .img>img {
     border-radius: 0 10rem;
+}
+
+
+@media (max-width :750px) {
+    .img {
+        display: none;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .details>.vision-mission {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width :350px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .details>.vision-mission {
+        grid-template-columns: 1fr;
+    }
 }
