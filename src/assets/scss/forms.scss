@@ -1,0 +1,47 @@
+// input field design chnages
+.form-group {
+    position: relative;
+    padding: 1.5rem 0 0;
+    margin-top: 1rem;
+}
+
+.form-field {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d2d2d2;
+    outline: 0;
+    font-size: 1.6rem;
+    color: #212121;
+    padding: 0.7rem 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form-field::placeholder {
+    color: transparent;
+}
+
+.form-field:placeholder-shown~.form-label {
+    font-size: 1.6rem;
+    cursor: text;
+    top: 2rem;
+}
+
+label,
+.form-field:focus~.form-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    color: $text-gray;
+}
+
+.form-field:focus~.form-label {
+    color: $secondary-color;
+}
+
+.form-field:focus {
+    padding-bottom: 0.6rem;
+    border-bottom: 0.2rem solid $secondary-color;
+}

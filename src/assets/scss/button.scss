@@ -1,0 +1,30 @@
+// button design changes
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid $secondary-color;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $secondary-color;
+    color: white;
+}
+
+.btn-primary:active {
+    background-color: $secondary-color;
+    filter: drop-shadow(0.1rem 0.1rem $secondary-color) contrast(200%);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: $secondary-color;
+}
+
+.btn-secondary:active {
+    background-color: white;
+    filter: drop-shadow(0.1rem 0.1rem $text-muted) contrast(200%);
+}
