@@ -36,7 +36,7 @@ header {
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 10rem;
+    column-gap: min(10rem, 3.5vw);
     row-gap: 2rem;
 }
 
