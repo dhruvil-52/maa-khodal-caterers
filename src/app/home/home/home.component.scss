@@ -148,7 +148,11 @@
 }
 
 .details-section ul li::before {
-    content: url('../../../assets/icons/check-circle.svg');
+    content:'';
+    background-image: url('../../../assets/icons/check-circle.svg');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
     display: inline-block;
     vertical-align: middle;
     filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
