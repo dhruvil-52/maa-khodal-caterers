@@ -19,4 +19,8 @@ export class FooterComponent implements OnInit {
     window.open(type.link)
   }
 
+  openLocationInGoogleMap() {
+    const win: any = window.open('https://www.google.com/maps/search/?api=1&query=' + this.user.lat + ',' + this.user.lng, '_blank');
+    win.focus();
+  }
 }
