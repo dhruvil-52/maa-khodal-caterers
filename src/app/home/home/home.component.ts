@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   currentYear = new Date().getFullYear();
   establishedYear = 1998;
   totalExperience = 0;
+  name = ""
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +22,15 @@ export class HomeComponent implements OnInit {
       if (this.counter == this.totalExperience) {
         clearInterval(interval);
       }
+    }, 100);
+
+    let nameCounter = 0;
+    let nameInterval = setInterval(() => {
+      this.name += user.fullName.substring(this.name.length, this.counter);
+      if (nameCounter == user.fullName.length) {
+        clearInterval(nameInterval);
+      }
+      nameCounter += 1;
     }, 100);
   }
 
