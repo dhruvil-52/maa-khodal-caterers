@@ -1,0 +1,101 @@
+@import '../../../assets/scss/variables';
+
+.container {
+    position: relative;
+    background-image: url('../../../assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 1.5rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    padding: 5rem;
+    color: white;
+}
+
+.content {
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.btn {
+    background-color: #eee;
+    color: $secondary-color;
+    cursor: pointer;
+    padding: 1.8rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5rem;
+    // transition: 0.4s;
+    // letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../../../assets/icons/caret-right.svg');
+    background-size: cover;
+    height: 3rem;
+    width: 3rem;
+    vertical-align: middle;
+}
+
+.opened::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../../../assets/icons/caret-down.svg');
+    background-size: cover;
+    height: 3rem;
+    width: 3rem;
+    vertical-align: middle;
+}
+
+.opened,
+.btn:hover {
+    background-color: #ccc;
+}
+
+.opened {
+    margin-bottom: 0.5rem;
+}
+
+.panel {
+    padding: 0 3rem;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.item {
+    line-height: 3rem;
+    font-size: 1.5rem;
+}
+
+.show-panel {
+    display: block;
+}
+
+.accordion:not(:first-child) {
+    margin-top: 3rem;
+}
