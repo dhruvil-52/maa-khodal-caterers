@@ -15,7 +15,7 @@
     padding: 2rem;
     height: min(50rem, 100vh);
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas:
         "logo contact service";
     column-gap: 5rem;
@@ -139,9 +139,9 @@ li>h4 {
     text-align: center;
 }
 
-@media (width <=359px) {
+@media (width <=480px) {
     .footer {
-        grid-template-columns: 3fr 1fr 3fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
             "logo"
             "service"
@@ -150,13 +150,14 @@ li>h4 {
     }
 }
 
-@media (360px <=width <= 730px) {
+@media (481px <=width <=850px) {
     .footer {
         grid-template-columns: 3fr 1fr 3fr;
         grid-template-areas:
             "logo logo service"
             "contact contact service"
             "contact contact service";
+        justify-content: center;
     }
 
     .contact {
@@ -171,11 +172,5 @@ li>h4 {
     .contact>ul>li {
         min-width: 200px;
         flex-grow: 1;
-    }
-}
-
-@media (731px <=width <=1200px) {
-    .footer {
-        grid-template-columns: 3fr 1.5fr 1.5fr;
     }
 }
