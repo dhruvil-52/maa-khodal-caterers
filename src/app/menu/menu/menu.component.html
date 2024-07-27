@@ -41,7 +41,7 @@
     </div>
   </section>
 
-  <div class="print-btn">
+  <div class="print-btn" *ngIf="!!formData.yourMenu.length">
     <button
       type="submit"
       class="btn btn-primary mr-2"
