@@ -1,0 +1,10 @@
+version: 1
+services:
+  - type: web
+    name: maa-khodal
+    buildCommand: "ng build --prod"
+    publishDirectory: "dist/maa-khodal"
+    redirects:
+      - source: "/*"
+        destination: "/index.html"
+        type: "rewrite"
