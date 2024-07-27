@@ -49,10 +49,11 @@ export class ContactUsComponent implements OnInit {
   }
   sendToWhatsapp() {
     let newMessage;
-    newMessage = 'Hii You got an Enquiry from ' + this.formData.name  + '%0A %0A' +
+    newMessage = 'Hii I am ' + this.formData.name  + '%0A %0A' +
       (this.formData.phone ? '📱 Phone Number ' + this.formData.phone + '%0A %0A' : '') +
       (this.formData.email ? '📧 Email ' + this.formData.email + '%0A %0A' : '') +
-      (this.formData.message ? '💬 Message ' + this.formData.message + '%0A %0A' : '');
+      (this.formData.message ? '💬 Message ' + this.formData.message + '%0A %0A' : '') +
+      'After getting my Enquiry, Please call back';
     window.open(`https://api.whatsapp.com/send?phone=91${user.mobile}&text=${newMessage}`, '_blank')
   }
   sendToTwitter() {
