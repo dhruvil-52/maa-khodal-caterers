@@ -89,7 +89,7 @@ header {
 
 .item {
     line-height: 3rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .show-panel {
@@ -102,7 +102,7 @@ header {
 
 .print-btn {
     position: fixed;
-    top: 70vh;
+    top: 10rem;
     right: 0;
     z-index: 5;
 }
@@ -115,6 +115,7 @@ input[type="checkbox"] {
     display: inline-block;
     position: relative;
     margin-left: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 

@@ -8,7 +8,9 @@ import { user } from 'src/app/shared/user';
 })
 export class MenuComponent implements OnInit {
   categories: any = user.categories;
-  yourMenu: Array<any> = [];
+  formData: any = { yourMenu: [], name: "dhruvil", phone: 329850985 };
+  openModal: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,18 +25,55 @@ export class MenuComponent implements OnInit {
 
   onCheckboxChange(event: any, item: any) {
     if (event.target.checked) {
-      this.yourMenu.push(item);
+      this.formData.yourMenu.push(item);
     } else {
-      const index = this.yourMenu.findIndex(item => item.name == item.name);
+      const index = this.formData.yourMenu.findIndex((e: any) => {
+        if (e.name === item.name) {
+          return true;
+        } else {
+          return false;
+        }
+      });
       if (index > -1) {
-        this.yourMenu.splice(index, 1);
+        this.formData.yourMenu.splice(index, 1);
       }
     }
-    this.yourMenu.sort((a: any, b: any) => a.sort - b.sort)
+    this.formData.yourMenu.sort((a: any, b: any) => {
+      if (a.sort === b.sort) {
+        return a.id - b.id;
+      } else {
+        return a.sort - b.sort;
+      }
+    })
   }
 
-  printMenu() {
+  openModalForShareMenu() {
+    this.openModal = true;
+  }
 
+  closeModalForShareMenu() {
+    this.openModal = false;
+    this.clearForm();
+  }
+
+  sendToWhatsapp() {
+    let menu = "";
+    if (this.formData.yourMenu.length) {
+      menu = this.formData.yourMenu.map((item: any, index: any) => `${index + 1}. ${item.name}`)
+        .join('%0A');
+    }
+    let newMessage;
+    newMessage = 'Hii You got an Enquiry from ' + this.formData.name + '%0A %0A' +
+      (this.formData.phone ? '📱 Phone Number ' + this.formData.phone + '%0A %0A' : '') +
+      (this.formData.email ? '📧 Email ' + this.formData.email + '%0A %0A' : '') +
+      (this.formData.message ? '💬 Message ' + this.formData.message + '%0A %0A' : '') +
+      (this.formData.yourMenu.length ? '📃 Menu %0A' + menu + '%0A %0A' : '');
+    window.open(`https://api.whatsapp.com/send?phone=91${user.mobile}&text=${newMessage}`, '_blank');
+    this.closeModalForShareMenu();
+  }
+
+  clearForm() {
+    this.formData = { yourMenu: this.formData.yourMenu };
   }
 
 }

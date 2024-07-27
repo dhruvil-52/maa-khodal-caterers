@@ -42,8 +42,83 @@
   </section>
 
   <div class="print-btn">
-    <button type="submit" class="btn btn-primary mr-2" (click)="printMenu()">
-      Print
+    <button
+      type="submit"
+      class="btn btn-primary mr-2"
+      (click)="openModalForShareMenu()"
+    >
+      Send Details
     </button>
+  </div>
+
+  <div class="backdrop" *ngIf="!!openModal"></div>
+  <div class="modal" *ngIf="!!openModal">
+    <div class="modal-header">
+      <h2>Send Details</h2>
+      <img
+        class="cross"
+        src="assets/icons/close.svg"
+        height="100%"
+        width="100%"
+        (click)="closeModalForShareMenu()"
+      />
+    </div>
+    <div class="modal-body">
+      <div class="contact-form">
+        <div class="form-group">
+          <input
+            type="text"
+            id="name"
+            class="form-field"
+            placeholder="Name"
+            [(ngModel)]="formData.name"
+          />
+          <label for="name" class="form-label">Name *</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="tel"
+            class="form-field"
+            placeholder="Phone No."
+            [(ngModel)]="formData.phone"
+          />
+          <label for="tel" class="form-label">Phone No. *</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            class="form-field"
+            placeholder="Email"
+            [(ngModel)]="formData.email"
+          />
+          <label for="email" class="form-label">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea
+            id="message"
+            class="form-field"
+            placeholder="Your Message"
+            rows="4"
+            [(ngModel)]="formData.message"
+          ></textarea>
+          <label for="message" class="form-label">Your Message</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="submit"
+        class="btn btn-primary mr-2"
+        [disabled]="!formData.name || !formData.phone"
+        (click)="sendToWhatsapp()"
+      >
+        Send
+      </button>
+      <button type="reset" class="btn btn-secondary" (click)="clearForm()">
+        Clear
+      </button>
+    </div>
   </div>
 </div>
