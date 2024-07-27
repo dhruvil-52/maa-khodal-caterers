@@ -3,8 +3,8 @@
 .container {
     position: relative;
     background-image: url('../../../assets/images/background.jpg');
-    background-size: cover;
-    background-position: center;
+    background-repeat: repeat;
+    background-position: top;
     font-size: 1.5rem;
 }
 
@@ -108,10 +108,46 @@ header {
 }
 
 input[type="checkbox"] {
-    margin-right: 0.5rem;
+    display: none;
 }
 
-input[type="checkbox" i] {
-    background-color: red !important;
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    margin-left: 2rem;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #E9EAEC;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+    position: relative;
     cursor: pointer;
+}
+
+.checkbox:after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    width: 0.5rem;
+    height: 1rem;
+    border: solid #333;
+    border-width: 0 0.2rem 0.2rem 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+input[type="checkbox"]:checked+.checkbox:after {
+    opacity: 1;
+    filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
+}
+
+.checkbox:hover,
+.checkbox:active {
+    background-color: #E9EAEC;
 }

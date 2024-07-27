@@ -25,16 +25,16 @@
       > -->
         <div class="panel" [ngClass]="{ 'show-panel': category.isExpanded }">
           <div class="item" *ngFor="let item of category.items; let i = index">
-            <div class="checkbox-label">
+            <label class="checkbox-label">
               <input
                 type="checkbox"
                 id="{{ item.name }}{{ i }}"
                 [(ngModel)]="item.isChecked"
                 (change)="onCheckboxChange($event, item)"
-                name="{{ item.name }}{{ i }}"
               />
+              <span class="checkbox"></span>
               {{ item.name }}
-            </div>
+            </label>
           </div>
         </div>
       </div>
