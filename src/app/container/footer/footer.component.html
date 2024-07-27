@@ -8,7 +8,6 @@
         width="100%"
         height="100%"
       />
-
       <div class="social-media">
         <img
           *ngFor="let social of user.socialMedias"
@@ -42,17 +41,16 @@
       </ul>
     </div>
     <div class="quick-links">
-      <h2 class="item-header">Our Sevices</h2>
+      <h2 class="item-header">Our Services</h2>
       <ul>
         <li class="item-link" *ngFor="let service of user.services">
           {{ service }}
         </li>
       </ul>
     </div>
-
     <div class="rights">
       <p>
-        &#169; {{ currentYear }} {{ user.name }} Catering. All Rights Reserved !
+        &#169; {{ currentYear }} {{ user.name }} Catering. All Rights Reserved!
       </p>
     </div>
   </div>

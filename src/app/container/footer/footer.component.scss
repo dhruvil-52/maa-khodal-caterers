@@ -22,14 +22,15 @@
 .content {
     position: relative;
     z-index: 2;
-    height: 100vh; // confused here
     font-size: 1.5rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 40rem;
     grid-template-areas:
         "logo contact service";
     column-gap: 5rem;
     color: $text-muted;
+    padding: 2rem 1rem;
 }
 
 .img-container {
@@ -55,30 +56,8 @@ ul {
     gap: 1.2rem;
 }
 
-.address h4:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-right: 1rem;
-    background: url('../../../assets/icons/map-pin.svg') no-repeat center center;
-    background-size: contain;
-    filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
-}
-
-.phone h4:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-right: 1rem;
-    background: url('../../../assets/icons/phone.svg') no-repeat center center;
-    background-size: contain;
-    filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
-}
-
+.address h4:before,
+.phone h4:before,
 .mail h4:before {
     content: '';
     display: inline-block;
@@ -86,9 +65,20 @@ ul {
     width: 2.5rem;
     height: 2.5rem;
     margin-right: 1rem;
-    background: url('../../../assets/icons/mail.svg') no-repeat center center;
     background-size: contain;
     filter: invert(13%) sepia(92%) saturate(6157%) hue-rotate(353deg) brightness(96%) contrast(84%);
+}
+
+.address h4:before {
+    background: url('../../../assets/icons/map-pin.svg') no-repeat center center;
+}
+
+.phone h4:before {
+    background: url('../../../assets/icons/phone.svg') no-repeat center center;
+}
+
+.mail h4:before {
+    background: url('../../../assets/icons/mail.svg') no-repeat center center;
 }
 
 li>h4 {
@@ -107,7 +97,6 @@ li>h4 {
 
 .social-media {
     position: absolute;
-    // bottom: 2rem;
     padding-top: 1rem;
     border-top: 0.1rem solid $text-muted;
     width: 20rem;
@@ -144,9 +133,10 @@ li>h4 {
     text-align: center;
 }
 
-@media (width <=480px) {
+@media (max-width: 480px) {
     .content {
         grid-template-columns: 1fr;
+        grid-template-rows: 20rem 35rem 30rem;
         grid-template-areas:
             "logo"
             "service"
@@ -154,8 +144,9 @@ li>h4 {
     }
 }
 
-@media (481px <=width <=850px) {
+@media (min-width: 481px) and (max-width: 850px) {
     .content {
+        grid-template-rows: 20rem 20rem 20rem;
         grid-template-columns: 3fr 1fr 3fr;
         grid-template-areas:
             "logo logo service"

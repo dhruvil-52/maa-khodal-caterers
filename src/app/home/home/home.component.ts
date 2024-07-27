@@ -24,14 +24,14 @@ export class HomeComponent implements OnInit {
       }
     }, 100);
 
-    let nameCounter = 0;
-    let nameInterval = setInterval(() => {
-      this.name += this.user.fullName.substring(this.name.length, this.counter);
-      if (nameCounter == this.user.fullName.length) {
-        clearInterval(nameInterval);
-      }
-      nameCounter += 1;
-    }, 100);
+    // let nameCounter = 0;
+    // let nameInterval = setInterval(() => {
+    //   this.name += this.user.fullName.substring(this.name.length, this.counter);
+    //   if (nameCounter == this.user.fullName.length) {
+    //     clearInterval(nameInterval);
+    //   }
+    //   nameCounter += 1;
+    // }, 100);
   }
 
 }
