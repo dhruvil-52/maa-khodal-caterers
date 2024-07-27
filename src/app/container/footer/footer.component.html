@@ -40,15 +40,9 @@
   <div class="quick-links">
     <h2 class="item-header">Our Sevices</h2>
     <ul>
-      <li class="item-link">WEDDING</li>
-      <li class="item-link">RECEPTION</li>
-      <li class="item-link">BABY SHOWER</li>
-      <li class="item-link">BIRTHDAY PARTY </li>
-      <li class="item-link">RING CEREMONY</li>
-      <li class="item-link">CORPORATE EVENTS</li>
-      <li class="item-link">GET TO GETHER</li>
-      <li class="item-link">ANNUAL FUNCTION</li>
-      <li class="item-link">LIVE CONCERT</li>
+      <li class="item-link" *ngFor="let service of user.services">
+        {{ service }}
+      </li>
     </ul>
   </div>
 

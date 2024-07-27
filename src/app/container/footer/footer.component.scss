@@ -1,25 +1,5 @@
 @import '../../../assets/scss/variables';
 
-.img-container {
-    height: 10rem;
-    width: 20rem;
-    text-align: center;
-}
-
-.footer {
-    padding: 2rem;
-    height: 70vh;
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    column-gap: 5rem;
-    color: $text-muted;
-    position: relative;
-    background-image: url('../../../assets/images/footer-bg.jpg');
-    background-size: cover;
-    background-position: top;
-    font-size: 1.5rem;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -29,6 +9,37 @@
     background-color: $primary-color;
     opacity: 0.2;
     z-index: -1;
+}
+
+.footer {
+    padding: 2rem;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-areas:
+        "logo contact service";
+    column-gap: 5rem;
+    color: $text-muted;
+    position: relative;
+    background-image: url('../../../assets/images/footer-bg.jpg');
+    background-size: cover;
+    background-position: top;
+    font-size: 1.5rem;
+}
+
+.img-container {
+    grid-area: logo;
+    height: 10rem;
+    width: 20rem;
+    text-align: center;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.quick-links {
+    grid-area: service;
 }
 
 ul {
@@ -128,52 +139,47 @@ li>h4 {
     text-align: center;
 }
 
-@media (width <=300px) {
+@media (width <=359px) {
     .footer {
-        grid-template-columns: 1fr;
-        height: 100vh;
-    }
-
-    .contact {
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-template-columns: 3fr 1fr 3fr;
+        grid-template-areas:
+            "logo"
+            "service"
+            "contact";
+        height: 150vh;
     }
 }
 
-@media (300px <=width <=500px) {
+@media (360px <=width <=524px) {
+    .footer {
+        grid-template-columns: 3fr 1fr 3fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas:
+            "logo logo service"
+            "contact contact contact";
+        height: 90vh;
+    }
+
     .contact>ul {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contact {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-
-    .img-container {
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-
-    .quick-links {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 3;
+        grid-template-columns: 3fr 1fr 1fr;
     }
 }
 
-@media (500px <=width <=750px) {
+@media (525px <=width <=750px) {
     .footer {
-        grid-template-columns: 1fr 1fr 0.8fr;
+        grid-template-columns: 3fr 1fr 2fr;
+        grid-template-areas:
+            "logo logo service"
+            "contact contact service"
+            "contact contact service";
+        height: 100vh;
     }
 }
 
 @media (751px <=width <=1200px) {
     .footer {
-        grid-template-columns: 1.5fr 1fr 0.8fr;
+        grid-template-columns: 3fr 1.5fr 1.5fr;
+        height: 85vh;
     }
 }
