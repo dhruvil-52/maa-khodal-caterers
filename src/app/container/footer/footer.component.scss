@@ -144,9 +144,11 @@ li>h4 {
         grid-template-columns: 1fr;
         grid-template-areas:
             "logo"
+            "logo"
             "service"
             "contact";
-        height: 150vh;
+        height: 130vh;
+        padding: 2rem 5rem 5rem;
     }
 }
 
@@ -157,20 +159,5 @@ li>h4 {
             "logo logo service"
             "contact contact service"
             "contact contact service";
-        justify-content: center;
-    }
-
-    .contact {
-        margin-top: 5rem;
-    }
-
-    .contact>ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .contact>ul>li {
-        min-width: 200px;
-        flex-grow: 1;
     }
 }
