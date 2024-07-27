@@ -185,6 +185,9 @@
 
 
 @media (max-width: 500px) {
+    .intro-section>.intro {
+        top: min(25vw, 30%);
+    }
 
     .image1,
     .image2 {
