@@ -1,5 +1,13 @@
 @import '../../../assets/scss/variables';
 
+.footer {
+    padding: 2rem;
+    position: relative;
+    background-image: url('../../../assets/images/footer-bg.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -7,24 +15,21 @@
     left: 0;
     right: 0;
     background-color: $primary-color;
-    opacity: 0.2;
-    z-index: -1;
+    opacity: 0.8;
+    z-index: 1;
 }
 
-.footer {
-    padding: 2rem;
-    height: 100vh;
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100vh; // confused here
+    font-size: 1.5rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas:
         "logo contact service";
     column-gap: 5rem;
     color: $text-muted;
-    position: relative;
-    background-image: url('../../../assets/images/footer-bg.jpg');
-    background-size: cover;
-    background-position: top;
-    font-size: 1.5rem;
 }
 
 .img-container {
@@ -140,19 +145,17 @@ li>h4 {
 }
 
 @media (width <=480px) {
-    .footer {
+    .content {
         grid-template-columns: 1fr;
         grid-template-areas:
             "logo"
-            "logo"
             "service"
             "contact";
-        padding: 2rem 5rem 5rem;
     }
 }
 
 @media (481px <=width <=850px) {
-    .footer {
+    .content {
         grid-template-columns: 3fr 1fr 3fr;
         grid-template-areas:
             "logo logo service"

@@ -1,54 +1,59 @@
 <div class="footer">
   <div class="overlay"></div>
-  <div class="img-container" routerLink="/home">
-    <img
-      class="img"
-      src="assets/logos/logo-dark-1.png"
-      width="100%"
-      height="100%"
-    />
-
-    <div class="social-media">
+  <div class="content">
+    <div class="img-container" routerLink="/home">
       <img
-        *ngFor="let social of user.socialMedias"
         class="img"
-        [src]="social.path"
+        src="assets/logos/logo-dark-1.png"
         width="100%"
         height="100%"
-        (click)="onSocialMediaClick(social)"
       />
-    </div>
-  </div>
-  <div class="contact">
-    <h2 class="item-header">Contacts</h2>
-    <ul>
-      <li class="item-link address pointer" (click)="openLocationInGoogleMap()">
-        <h4>Address</h4>
-        <p>{{ user.plainAddress }}</p>
-      </li>
-      <li class="item-link phone">
-        <h4>Phone</h4>
-        <p>{{ user.mobile }}</p>
-        <p>{{ user.mobile2 }}</p>
-      </li>
-      <li class="item-link mail">
-        <h4>Mail</h4>
-        <p>{{ user.email }}</p>
-      </li>
-    </ul>
-  </div>
-  <div class="quick-links">
-    <h2 class="item-header">Our Sevices</h2>
-    <ul>
-      <li class="item-link" *ngFor="let service of user.services">
-        {{ service }}
-      </li>
-    </ul>
-  </div>
 
-  <div class="rights">
-    <p>
-      &#169; {{ currentYear }} {{ user.name }} Catering. All Rights Reserved !
-    </p>
+      <div class="social-media">
+        <img
+          *ngFor="let social of user.socialMedias"
+          class="img"
+          [src]="social.path"
+          width="100%"
+          height="100%"
+          (click)="onSocialMediaClick(social)"
+        />
+      </div>
+    </div>
+    <div class="contact">
+      <h2 class="item-header">Contacts</h2>
+      <ul>
+        <li
+          class="item-link address pointer"
+          (click)="openLocationInGoogleMap()"
+        >
+          <h4>Address</h4>
+          <p>{{ user.plainAddress }}</p>
+        </li>
+        <li class="item-link phone">
+          <h4>Phone</h4>
+          <p>{{ user.mobile }}</p>
+          <p>{{ user.mobile2 }}</p>
+        </li>
+        <li class="item-link mail">
+          <h4>Mail</h4>
+          <p>{{ user.email }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="quick-links">
+      <h2 class="item-header">Our Sevices</h2>
+      <ul>
+        <li class="item-link" *ngFor="let service of user.services">
+          {{ service }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="rights">
+      <p>
+        &#169; {{ currentYear }} {{ user.name }} Catering. All Rights Reserved !
+      </p>
+    </div>
   </div>
 </div>
