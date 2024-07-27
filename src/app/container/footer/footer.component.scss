@@ -13,7 +13,7 @@
 
 .footer {
     padding: 2rem;
-    height: min(50rem, 100vh);
+    height: 100vh;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas:
@@ -147,7 +147,6 @@ li>h4 {
             "logo"
             "service"
             "contact";
-        height: 130vh;
         padding: 2rem 5rem 5rem;
     }
 }
