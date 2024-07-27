@@ -8,7 +8,7 @@ import { user } from 'src/app/shared/user';
 })
 export class MenuComponent implements OnInit {
   categories: any = user.categories;
-  formData: any = { yourMenu: [], name: "dhruvil", phone: 329850985 };
+  formData: any = { yourMenu: [] };
   openModal: boolean = false;
 
   constructor() { }
@@ -63,11 +63,12 @@ export class MenuComponent implements OnInit {
         .join('%0A');
     }
     let newMessage;
-    newMessage = 'Hii You got an Enquiry from ' + this.formData.name + '%0A %0A' +
+    newMessage = 'Hii I am ' + this.formData.name + '%0A %0A' +
       (this.formData.phone ? '📱 Phone Number ' + this.formData.phone + '%0A %0A' : '') +
       (this.formData.email ? '📧 Email ' + this.formData.email + '%0A %0A' : '') +
       (this.formData.message ? '💬 Message ' + this.formData.message + '%0A %0A' : '') +
-      (this.formData.yourMenu.length ? '📃 Menu %0A' + menu + '%0A %0A' : '');
+      (this.formData.yourMenu.length ? '📃 Menu %0A' + menu + '%0A %0A' : '')+
+      'Please Call back after getting my Enquiry';
     window.open(`https://api.whatsapp.com/send?phone=91${user.mobile}&text=${newMessage}`, '_blank');
     this.closeModalForShareMenu();
   }
