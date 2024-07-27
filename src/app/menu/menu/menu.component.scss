@@ -35,7 +35,7 @@ header {
     padding: 2rem;
 }
 
-.btn {
+.category {
     background-color: #eee;
     color: $secondary-color;
     cursor: pointer;
@@ -51,7 +51,7 @@ header {
     font-weight: bold;
 }
 
-.btn::before {
+.category::before {
     content: '';
     display: inline-block;
     background-image: url('../../../assets/icons/caret-right.svg');
@@ -72,7 +72,7 @@ header {
 }
 
 .opened,
-.btn:hover {
+.category:hover {
     background-color: #ccc;
 }
 
@@ -98,4 +98,20 @@ header {
 
 .accordion:not(:first-child) {
     margin-top: 3rem;
+}
+
+.print-btn {
+    position: fixed;
+    top: 70vh;
+    right: 0;
+    z-index: 5;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+input[type="checkbox" i] {
+    background-color: red !important;
+    cursor: pointer;
 }

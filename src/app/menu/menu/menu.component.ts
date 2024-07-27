@@ -8,7 +8,7 @@ import { user } from 'src/app/shared/user';
 })
 export class MenuComponent implements OnInit {
   categories: any = user.categories;
-  yourMenu = [];
+  yourMenu: Array<any> = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +21,19 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  expandPannel() {
+  onCheckboxChange(event: any, item: any) {
+    if (event.target.checked) {
+      this.yourMenu.push(item);
+    } else {
+      const index = this.yourMenu.findIndex(item => item.name == item.name);
+      if (index > -1) {
+        this.yourMenu.splice(index, 1);
+      }
+    }
+    this.yourMenu.sort((a: any, b: any) => a.sort - b.sort)
+  }
+
+  printMenu() {
 
   }
 

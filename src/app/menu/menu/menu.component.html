@@ -7,7 +7,7 @@
     <div class="accordion" *ngFor="let category of categories">
       <button
         type="button"
-        class="btn"
+        class="category"
         [ngClass]="{ opened: category.isExpanded }"
         (click)="category.isExpanded = !category.isExpanded"
       >
@@ -23,12 +23,27 @@
           'background-position': 'center'
         }"
       > -->
-        <ol class="panel" [ngClass]="{ 'show-panel': category.isExpanded }">
-          <div class="item" *ngFor="let item of category.items">
-            {{ item.name }}
+        <div class="panel" [ngClass]="{ 'show-panel': category.isExpanded }">
+          <div class="item" *ngFor="let item of category.items; let i = index">
+            <div class="checkbox-label">
+              <input
+                type="checkbox"
+                id="{{ item.name }}{{ i }}"
+                [(ngModel)]="item.isChecked"
+                (change)="onCheckboxChange($event, item)"
+                name="{{ item.name }}{{ i }}"
+              />
+              {{ item.name }}
+            </div>
           </div>
-        </ol>
+        </div>
       </div>
     </div>
   </section>
+
+  <div class="print-btn">
+    <button type="submit" class="btn btn-primary mr-2" (click)="printMenu()">
+      Print
+    </button>
+  </div>
 </div>
