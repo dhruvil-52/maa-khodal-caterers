@@ -8,6 +8,11 @@
     cursor: pointer;
 }
 
+.btn:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
 .btn-primary {
     background-color: $secondary-color;
     color: white;

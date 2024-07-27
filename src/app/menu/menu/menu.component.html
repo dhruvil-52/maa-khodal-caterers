@@ -13,8 +13,7 @@
       >
         {{ category.name }}
       </button>
-      <div>
-        <!-- <div
+      <!-- <div
         class="panel"
         [ngClass]="{ 'show-panel': category.isExpanded }"
         [ngStyle]="{
@@ -23,32 +22,64 @@
           'background-position': 'center'
         }"
       > -->
-        <div class="panel" [ngClass]="{ 'show-panel': category.isExpanded }">
-          <div class="item" *ngFor="let item of category.items; let i = index">
-            <label class="checkbox-label">
-              <input
-                type="checkbox"
-                id="{{ item.name }}{{ i }}"
-                [(ngModel)]="item.isChecked"
-                (change)="onCheckboxChange($event, item)"
-              />
-              <span class="checkbox"></span>
-              {{ item.name }}
-            </label>
-          </div>
+      <div class="panel" [ngClass]="{ 'show-panel': category.isExpanded }">
+        <div class="item" *ngFor="let item of category.items; let i = index">
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="{{ item.name }}{{ i }}"
+              [(ngModel)]="item.isChecked"
+              (change)="onCheckboxChange($event, item)"
+            />
+            <span class="checkbox"></span>
+            <span [ngClass]="{ 'searched-item': item.searched }"
+              >{{ item.name }}
+            </span>
+          </label>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="print-btn" *ngIf="!!formData.yourMenu.length">
-    <button
-      type="submit"
-      class="btn btn-primary mr-2"
-      (click)="openModalForShareMenu()"
-    >
-      Send Details
-    </button>
+  <div class="action-section">
+    <div class="form-group search-input">
+      <input
+        type="text"
+        id="item"
+        class="form-field"
+        placeholder="Search Item"
+        ngModel
+        [(ngModel)]="searchedText"
+        (ngModelChange)="onInputChange($event)"
+      />
+      <label for="item" class="form-label">Search Item</label>
+
+      <img
+        class="cross"
+        src="assets/icons/close.svg"
+        height="100%"
+        width="100%"
+        (click)="clear()"
+      />
+    </div>
+    <div style="margin-top: 1rem">
+      <button
+        type="button"
+        class="btn btn-secondary mr-2"
+        (click)="clearMenu()"
+        [disabled]="!formData.yourMenu.length"
+      >
+        Clear
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="openModalForShareMenu()"
+        [disabled]="!formData.yourMenu.length"
+      >
+        Send Details
+      </button>
+    </div>
   </div>
 
   <div class="backdrop" *ngIf="!!openModal"></div>
