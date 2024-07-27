@@ -6,9 +6,10 @@
     <li class="item">
       <a
         href="javascript:;"
-        routerLink=""
+        routerLink="/home"
         routerLinkActive="active"
         class="item-link"
+        (click)="toggleMenu($event)"
       >
         Home
       </a>
@@ -19,6 +20,7 @@
         routerLink="/about-us"
         routerLinkActive="active"
         class="item-link"
+        (click)="toggleMenu($event)"
       >
         About Us
       </a>
@@ -29,6 +31,7 @@
         routerLink="/services"
         routerLinkActive="active"
         class="item-link"
+        (click)="toggleMenu($event)"
       >
         Services
       </a>
@@ -39,6 +42,7 @@
         routerLink="/menu"
         routerLinkActive="active"
         class="item-link"
+        (click)="toggleMenu($event)"
       >
         Menu
       </a>
@@ -49,13 +53,14 @@
         routerLink="/contact-us"
         routerLinkActive="active"
         class="item-link"
+        (click)="toggleMenu($event)"
       >
         Contact
       </a>
     </li>
   </ul>
 
-  <div class="menu-icon" (click)="isMenuOpned = !isMenuOpned">
+  <div class="menu-icon" (click)="toggleMenu($event)">
     <img
       class="menu"
       src="assets/icons/menu.svg"
