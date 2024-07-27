@@ -4,12 +4,12 @@ import { ContactUsModule } from './contact-us/contact-us.module';
 
 const routes: Routes = [
   {
-    path: 'home',
-    redirectTo: '',
+    path: '',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule)
   },
   {
