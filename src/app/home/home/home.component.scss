@@ -26,8 +26,8 @@
 
 .intro-section>.intro {
     position: absolute;
-    top: 10rem;
-    left: 5rem;
+    top: 30%;
+    left: 5%;
     max-width: 60vw;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .details-section ul li::before {
-    content:'';
+    content: '';
     background-image: url('../../../assets/icons/check-circle.svg');
     background-size: cover;
     height: 2rem;
