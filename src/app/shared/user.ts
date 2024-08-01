@@ -18,8 +18,7 @@ export const user = {
             link: ''
         }
     ],
-    plainAddress: `2,3 Mayur park, Besides Bhagawati School, Hirawadi.`,
-    address: `2,3 Mayur park, <br> Besides Bhagawati School, <br> Hirawadi.`,
+    address: `2,3 Mayur park, Besides Bhagawati School, Hirawadi.`,
     mobile: "8238267424",
     mobile2: "9924015294",
     email: "maakhodal83@gmail.com",
